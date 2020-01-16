@@ -1,0 +1,189 @@
+16-01-2020 01:28:14.633 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper.buildDefaultMergedContextConfiguration - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.carros.CarrosServiceTest], using SpringBootContextLoader
+16-01-2020 01:28:14.639 [main] INFO  o.s.t.c.s.AbstractContextLoader.generateDefaultLocations - Could not detect default resource locations for test class [com.carros.CarrosServiceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+16-01-2020 01:28:14.640 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils.detectDefaultConfigurationClasses - Could not detect default configuration classes for test class [com.carros.CarrosServiceTest]: CarrosServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16-01-2020 01:28:14.743 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper.getOrFindConfigurationClasses - Found @SpringBootConfiguration com.carros.ApicarroApplication for test class com.carros.CarrosServiceTest
+16-01-2020 01:28:14.845 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper.getDefaultTestExecutionListenerClassNames - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+16-01-2020 01:28:14.860 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper.getTestExecutionListeners - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6e0f5f7f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2805d709, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@3ee37e5a, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2ea41516, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3a44431a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3c7f66c4, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@194bcebf, org.springframework.test.context.event.EventPublishingTestExecutionListener@17497425, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@f0da945, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4803b726, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@ffaa6af, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@53ce1329, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@316bcf94]
+16-01-2020 01:28:15.178 [main] INFO  com.carros.CarrosServiceTest.logStarting - Starting CarrosServiceTest on DESKTOP-SO2OINP with PID 18996 (started by edval in E:\ProjetoEstudoSpring\apiCarros)
+16-01-2020 01:28:15.179 [main] INFO  com.carros.CarrosServiceTest.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+16-01-2020 01:28:15.722 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16-01-2020 01:28:15.795 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn - Finished Spring Data repository scanning in 62ms. Found 1 JPA repository interfaces.
+16-01-2020 01:28:16.173 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16-01-2020 01:28:16.376 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [name: default]
+16-01-2020 01:28:16.441 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.4.9.Final}
+16-01-2020 01:28:16.568 [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+16-01-2020 01:28:16.668 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+16-01-2020 01:28:16.839 [main] INFO  com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+16-01-2020 01:28:16.858 [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+16-01-2020 01:28:17.361 [main] DEBUG org.hibernate.SQL.logStatement - 
+    
+    drop table carro if exists
+16-01-2020 01:28:17.364 [main] DEBUG org.hibernate.SQL.logStatement - 
+    
+    create table carro (
+       id bigint generated by default as identity,
+        descricao varchar(255),
+        latitude varchar(255),
+        longitude varchar(255),
+        nome varchar(255),
+        tipo varchar(255),
+        url_foto varchar(255),
+        url_video varchar(255),
+        primary key (id)
+    )
+16-01-2020 01:28:17.373 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16-01-2020 01:28:17.381 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16-01-2020 01:28:17.930 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16-01-2020 01:28:18.325 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+16-01-2020 01:28:18.573 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration.lambda$h2Console$0 - H2 console available at '/console'. Database available at 'jdbc:h2:mem:carros'
+16-01-2020 01:28:18.660 [main] INFO  com.carros.CarrosServiceTest.logStarted - Started CarrosServiceTest in 3.694 seconds (JVM running for 4.657)
+16-01-2020 01:28:18.752 [main] DEBUG org.hibernate.SQL.logStatement - 
+    select
+        carro0_.id as id1_0_0_,
+        carro0_.descricao as descrica2_0_0_,
+        carro0_.latitude as latitude3_0_0_,
+        carro0_.longitude as longitud4_0_0_,
+        carro0_.nome as nome5_0_0_,
+        carro0_.tipo as tipo6_0_0_,
+        carro0_.url_foto as url_foto7_0_0_,
+        carro0_.url_video as url_vide8_0_0_ 
+    from
+        carro carro0_ 
+    where
+        carro0_.id=?
+16-01-2020 01:28:18.956 [main] DEBUG org.hibernate.SQL.logStatement - 
+    select
+        carro0_.id as id1_0_,
+        carro0_.descricao as descrica2_0_,
+        carro0_.latitude as latitude3_0_,
+        carro0_.longitude as longitud4_0_,
+        carro0_.nome as nome5_0_,
+        carro0_.tipo as tipo6_0_,
+        carro0_.url_foto as url_foto7_0_,
+        carro0_.url_video as url_vide8_0_ 
+    from
+        carro carro0_
+16-01-2020 01:28:18.997 [main] DEBUG org.hibernate.SQL.logStatement - 
+    insert 
+    into
+        carro
+        (id, descricao, latitude, longitude, nome, tipo, url_foto, url_video) 
+    values
+        (null, ?, ?, ?, ?, ?, ?, ?)
+16-01-2020 01:28:19.007 [main] DEBUG org.hibernate.SQL.logStatement - 
+    select
+        carro0_.id as id1_0_0_,
+        carro0_.descricao as descrica2_0_0_,
+        carro0_.latitude as latitude3_0_0_,
+        carro0_.longitude as longitud4_0_0_,
+        carro0_.nome as nome5_0_0_,
+        carro0_.tipo as tipo6_0_0_,
+        carro0_.url_foto as url_foto7_0_0_,
+        carro0_.url_video as url_vide8_0_0_ 
+    from
+        carro carro0_ 
+    where
+        carro0_.id=?
+16-01-2020 01:28:19.010 [main] DEBUG org.hibernate.SQL.logStatement - 
+    select
+        carro0_.id as id1_0_0_,
+        carro0_.descricao as descrica2_0_0_,
+        carro0_.latitude as latitude3_0_0_,
+        carro0_.longitude as longitud4_0_0_,
+        carro0_.nome as nome5_0_0_,
+        carro0_.tipo as tipo6_0_0_,
+        carro0_.url_foto as url_foto7_0_0_,
+        carro0_.url_video as url_vide8_0_0_ 
+    from
+        carro carro0_ 
+    where
+        carro0_.id=?
+16-01-2020 01:28:19.023 [main] DEBUG org.hibernate.SQL.logStatement - 
+    delete 
+    from
+        carro 
+    where
+        id=?
+16-01-2020 01:28:19.026 [main] DEBUG org.hibernate.SQL.logStatement - 
+    select
+        carro0_.id as id1_0_0_,
+        carro0_.descricao as descrica2_0_0_,
+        carro0_.latitude as latitude3_0_0_,
+        carro0_.longitude as longitud4_0_0_,
+        carro0_.nome as nome5_0_0_,
+        carro0_.tipo as tipo6_0_0_,
+        carro0_.url_foto as url_foto7_0_0_,
+        carro0_.url_video as url_vide8_0_0_ 
+    from
+        carro carro0_ 
+    where
+        carro0_.id=?
+16-01-2020 01:28:19.056 [main] DEBUG org.hibernate.SQL.logStatement - 
+    select
+        carro0_.id as id1_0_,
+        carro0_.descricao as descrica2_0_,
+        carro0_.latitude as latitude3_0_,
+        carro0_.longitude as longitud4_0_,
+        carro0_.nome as nome5_0_,
+        carro0_.tipo as tipo6_0_,
+        carro0_.url_foto as url_foto7_0_,
+        carro0_.url_video as url_vide8_0_ 
+    from
+        carro carro0_ 
+    where
+        carro0_.tipo=?
+16-01-2020 01:28:19.065 [main] DEBUG org.hibernate.SQL.logStatement - 
+    select
+        carro0_.id as id1_0_,
+        carro0_.descricao as descrica2_0_,
+        carro0_.latitude as latitude3_0_,
+        carro0_.longitude as longitud4_0_,
+        carro0_.nome as nome5_0_,
+        carro0_.tipo as tipo6_0_,
+        carro0_.url_foto as url_foto7_0_,
+        carro0_.url_video as url_vide8_0_ 
+    from
+        carro carro0_ 
+    where
+        carro0_.tipo=?
+16-01-2020 01:28:19.072 [main] DEBUG org.hibernate.SQL.logStatement - 
+    select
+        carro0_.id as id1_0_,
+        carro0_.descricao as descrica2_0_,
+        carro0_.latitude as latitude3_0_,
+        carro0_.longitude as longitud4_0_,
+        carro0_.nome as nome5_0_,
+        carro0_.tipo as tipo6_0_,
+        carro0_.url_foto as url_foto7_0_,
+        carro0_.url_video as url_vide8_0_ 
+    from
+        carro carro0_ 
+    where
+        carro0_.tipo=?
+16-01-2020 01:28:19.080 [main] DEBUG org.hibernate.SQL.logStatement - 
+    select
+        carro0_.id as id1_0_,
+        carro0_.descricao as descrica2_0_,
+        carro0_.latitude as latitude3_0_,
+        carro0_.longitude as longitud4_0_,
+        carro0_.nome as nome5_0_,
+        carro0_.tipo as tipo6_0_,
+        carro0_.url_foto as url_foto7_0_,
+        carro0_.url_video as url_vide8_0_ 
+    from
+        carro carro0_ 
+    where
+        carro0_.tipo=?
+16-01-2020 01:28:19.089 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+16-01-2020 01:28:19.091 [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+16-01-2020 01:28:19.091 [SpringContextShutdownHook] INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl.perform - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+16-01-2020 01:28:19.092 [SpringContextShutdownHook] DEBUG org.hibernate.SQL.logStatement - 
+    
+    drop table carro if exists
+16-01-2020 01:28:19.093 [SpringContextShutdownHook] WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logExceptions - SQL Error: 90121, SQLState: 90121
+16-01-2020 01:28:19.093 [SpringContextShutdownHook] ERROR o.h.e.jdbc.spi.SqlExceptionHelper.logExceptions - Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+16-01-2020 01:28:19.094 [SpringContextShutdownHook] WARN  o.h.e.jdbc.spi.SqlExceptionHelper.logExceptions - SQL Error: 90121, SQLState: 90121
+16-01-2020 01:28:19.094 [SpringContextShutdownHook] ERROR o.h.e.jdbc.spi.SqlExceptionHelper.logExceptions - Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+16-01-2020 01:28:19.094 [SpringContextShutdownHook] WARN  o.s.b.f.s.DisposableBeanAdapter.destroy - Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+16-01-2020 01:28:19.095 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+16-01-2020 01:28:19.097 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
