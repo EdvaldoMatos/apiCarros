@@ -1,16 +1,23 @@
 package com.carros.api.controller;
 
+import java.net.URI;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
 import com.carros.domain.Carro;
 import com.carros.domain.CarroService;
 import com.carros.domain.dto.CarroDTO;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-
-import java.net.URI;
-import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/carros")
@@ -19,20 +26,20 @@ public class CarrosController {
     private CarroService service;
 
     @GetMapping()
-    public ResponseEntity get() {
+    public ResponseEntity<List<CarroDTO>> get() {
         List<CarroDTO> carros = service.getCarros();
         return ResponseEntity.ok(carros);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity get(@PathVariable("id") Long id) {
+    public ResponseEntity<CarroDTO> get(@PathVariable("id") Long id) {
         CarroDTO carro = service.getCarroById(id);
 
         return ResponseEntity.ok(carro);
     }
 
     @GetMapping("/tipo/{tipo}")
-    public ResponseEntity getCarrosByTipo(@PathVariable("tipo") String tipo) {
+    public ResponseEntity<List<CarroDTO>> getCarrosByTipo(@PathVariable("tipo") String tipo) {
         List<CarroDTO> carros = service.getCarrosByTipo(tipo);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
@@ -40,7 +47,7 @@ public class CarrosController {
     }
 
     @PostMapping
-    public ResponseEntity post(@RequestBody Carro carro) {
+    public ResponseEntity<CarroDTO> post(@RequestBody Carro carro) {
 
         CarroDTO c = service.insert(carro);
 
@@ -54,7 +61,7 @@ public class CarrosController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Carro carro) {
+    public ResponseEntity<CarroDTO> put(@PathVariable("id") Long id, @RequestBody Carro carro) {
 
         carro.setId(id);
 
@@ -66,7 +73,7 @@ public class CarrosController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity delete(@PathVariable("id") Long id) {
+    public ResponseEntity<?> delete(@PathVariable("id") Long id) {
         service.delete(id);
 
         return ResponseEntity.ok().build();
