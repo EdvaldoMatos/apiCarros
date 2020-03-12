@@ -11,6 +11,7 @@ public class CarroDTO {
 	private Long id;
 	private String nome;
 	private String tipo;
+	private FabricanteDTO fabricante;
 
 	/*
 	 * public CarroDTO(Carro carro) { this.id = carro.getId(); this.nome =

@@ -27,7 +27,7 @@ public class Carro {
     private String latitude;
     private String longitude;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Fabricante fabricante;
 
 }
