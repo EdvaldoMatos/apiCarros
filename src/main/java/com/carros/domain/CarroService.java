@@ -18,23 +18,23 @@ public class CarroService {
 	private CarroRepository rep;
 
 	public List<CarroDTO> getCarros() {
-		List<CarroDTO> list = rep.findAll().stream().map(CarroDTO::create).collect(Collectors.toList());
+		List<CarroDTO> list = rep.findAll().stream().map(CarroDTO::consumeFromVO).collect(Collectors.toList());
 		return list;
 	}
 
     public CarroDTO getCarroById(Long id) {
         Optional<Carro> carro = rep.findById(id);
-        return carro.map(CarroDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
+        return carro.map(CarroDTO::consumeFromVO).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
     }
     
     public List<CarroDTO> getCarrosByTipo(String tipo) {
-        return rep.findByTipo(tipo).stream().map(CarroDTO::create).collect(Collectors.toList());
+        return rep.findByTipo(tipo).stream().map(CarroDTO::consumeFromVO).collect(Collectors.toList());
     }
 
     public CarroDTO insert(Carro carro) {
         Assert.isNull(carro.getId(),"Não foi possível inserir o registro");
 
-        return CarroDTO.create(rep.save(carro));
+        return CarroDTO.consumeFromVO(rep.save(carro));
     }
 
     public CarroDTO update(Carro carro, Long id) {
@@ -52,7 +52,7 @@ public class CarroService {
             // Atualiza o carro
             rep.save(db);
 
-            return CarroDTO.create(db);
+            return CarroDTO.consumeFromVO(db);
         } else {
             return null;
             //throw new RuntimeException("Não foi possível atualizar o registro");

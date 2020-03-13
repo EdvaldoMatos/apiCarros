@@ -29,6 +29,11 @@ public class CarrosServiceTest {
         Carro carro = new Carro();
         carro.setNome("Porshe");
         carro.setTipo("esportivos");
+        
+        Fabricante fabri = new Fabricante();
+        fabri.setCodigo(1);
+        
+        carro.setFabricante(fabri);
 
         Fabricante fab = new Fabricante();
         fab.setCodigo(2);
