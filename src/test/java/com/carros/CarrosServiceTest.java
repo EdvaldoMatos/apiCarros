@@ -83,4 +83,14 @@ public class CarrosServiceTest {
 
         assertEquals("Ferrari FF", c.getNome());
     }
+    @Test
+    public void testCarroTipoNome() {
+    	CarroDTO c = service.getCarroTipoNome("esportivos","Ferrari FF");
+
+        assertNotNull(c);
+
+
+        assertEquals("Ferrari FF", c.getNome());
+
+    }
 }
