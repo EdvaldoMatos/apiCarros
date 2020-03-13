@@ -13,6 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.carros.api.exception.ObjectNotFoundException;
 import com.carros.domain.Carro;
 import com.carros.domain.CarroService;
+import com.carros.domain.Fabricante;
 import com.carros.domain.dto.CarroDTO;
 
 @RunWith(SpringRunner.class)
@@ -28,6 +29,11 @@ public class CarrosServiceTest {
         Carro carro = new Carro();
         carro.setNome("Porshe");
         carro.setTipo("esportivos");
+        
+        Fabricante fabri = new Fabricante();
+        fabri.setCodigo(1);
+        
+        carro.setFabricante(fabri);
 
         CarroDTO c = service.insert(carro);
 
