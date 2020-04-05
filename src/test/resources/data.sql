@@ -34,4 +34,5 @@ insert into carro (nome,descricao,url_foto,url_video,latitude,longitude,tipo) VA
 insert into carro (nome,descricao,url_foto,url_video,latitude,longitude,tipo) VALUES('Lexus LFA','Descrição Lexus LFA','http://www.livroandroid.com.br/livro/carros/luxo/Lexus_LFA.png','http://www.livroandroid.com.br/livro/carros/luxo/lexus.mp4','-23.564224','-46.653156','luxo');
 
 
-insert into fabricante(codigo, nome) VALUES (1, 'Volkswagem')
+insert into fabricante(codigo, nome) VALUES (1, 'Volkswagem');
+insert into fabricante(codigo, nome) VALUES (2, 'Fiat');
