@@ -8,5 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface CarroRepository extends JpaRepository<Carro, Long> {
 
     List<Carro> findByTipo(String tipo);
+
     Optional<Carro> findByTipoAndNome (String tipo, String nome);
+
 }

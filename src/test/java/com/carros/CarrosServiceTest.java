@@ -1,6 +1,8 @@
 package com.carros;
 
-import static junit.framework.TestCase.*;
+import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertNotNull;
+import static junit.framework.TestCase.fail;
 
 import java.util.List;
 
@@ -13,6 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.carros.api.exception.ObjectNotFoundException;
 import com.carros.domain.Carro;
 import com.carros.domain.CarroService;
+import com.carros.domain.Fabricante;
 import com.carros.domain.dto.CarroDTO;
 
 @RunWith(SpringRunner.class)
@@ -29,6 +32,17 @@ public class CarrosServiceTest {
         carro.setNome("Porshe");
         carro.setTipo("esportivos");
 
+        
+        Fabricante fabri = new Fabricante();
+        fabri.setCodigo(1);
+        
+        carro.setFabricante(fabri);
+
+        Fabricante fab = new Fabricante();
+        fab.setCodigo(2);
+        
+        carro.setFabricante(fab);
+        
         CarroDTO c = service.insert(carro);
 
         assertNotNull(c);
@@ -83,6 +97,7 @@ public class CarrosServiceTest {
 
         assertEquals("Ferrari FF", c.getNome());
     }
+
     @Test
     public void testCarroTipoNome() {
     	CarroDTO c = service.getCarroTipoNome("esportivos","Ferrari FF");
@@ -93,4 +108,5 @@ public class CarrosServiceTest {
         assertEquals("Ferrari FF", c.getNome());
 
     }
+
 }
