@@ -8,6 +8,7 @@ import lombok.Data;
 @Data
 @Builder
 public class CarroDTO {
+	
 	private Long id;
 	private String nome;
 	private String tipo;
