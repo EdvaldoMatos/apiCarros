@@ -1,9 +1,9 @@
-insert into user(nome,email,login,senha) values ('Edvaldo Matos','edvaldo.santiago@gmail.com','edvaldo','$2a$10$HKveMsPlst41Ie2LQgpijO691lUtZ8cLfcliAO1DD9TtZxEpaEoJe');
-insert into user(nome,email,login,senha) values ('Admin','admin@gmail.com','admin','$2a$10$HKveMsPlst41Ie2LQgpijO691lUtZ8cLfcliAO1DD9TtZxEpaEoJe');
-insert into user(nome,email,login,senha) values ('User','user@gmail.com','user','$2a$10$HKveMsPlst41Ie2LQgpijO691lUtZ8cLfcliAO1DD9TtZxEpaEoJe');
+insert into role_api (id,nome) values (1, 'ROLE_USER');
+insert into role_api (id,nome) values (2, 'ROLE_ADMIN');
 
-insert into role(id,nome) values (1, 'ROLE_USER');
-insert into role(id,nome) values (2, 'ROLE_ADMIN');
+insert into user_api (nome,email,login,senha) values ('Edvaldo Matos','edvaldo.santiago@gmail.com','edvaldo','$2a$10$HKveMsPlst41Ie2LQgpijO691lUtZ8cLfcliAO1DD9TtZxEpaEoJe');
+insert into user_api (nome,email,login,senha) values ('Admin','admin@gmail.com','admin','$2a$10$HKveMsPlst41Ie2LQgpijO691lUtZ8cLfcliAO1DD9TtZxEpaEoJe');
+insert into user_api (nome,email,login,senha) values ('User','user@gmail.com','user','$2a$10$HKveMsPlst41Ie2LQgpijO691lUtZ8cLfcliAO1DD9TtZxEpaEoJe');
 
 insert into user_roles(user_id,role_id) values(1, 1);
 insert into user_roles(user_id,role_id) values(2, 2);

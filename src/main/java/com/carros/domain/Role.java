@@ -9,7 +9,7 @@ import org.springframework.security.core.GrantedAuthority;
 
 import lombok.Data;
 
-@Entity
+@Entity(name = "role_api")
 @Data
 public class Role implements GrantedAuthority {
 

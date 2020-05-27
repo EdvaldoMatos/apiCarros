@@ -17,7 +17,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import lombok.Data;
 
-@Entity
+@Entity(name = "user_api")
 @Data
 public class User implements UserDetails {
 
