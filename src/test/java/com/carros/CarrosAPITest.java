@@ -18,7 +18,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.carros.domain.Carro;
 import com.carros.domain.CarroService;
-import com.carros.domain.dto.CarroDTO;
+import com.carros.domain.dto.CarroDTO_old;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ApicarroApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -29,19 +29,19 @@ public class CarrosAPITest {
     @Autowired
    private CarroService service;
 
-    private ResponseEntity<CarroDTO> getCarro(String url) {
+    private ResponseEntity<CarroDTO_old> getCarro(String url) {
         return
                // rest.withBasicAuth("user","123").getForEntity(url, CarroDTO.class);
-        rest.getForEntity(url, CarroDTO.class);
+        rest.getForEntity(url, CarroDTO_old.class);
     }
 
-    private ResponseEntity<List<CarroDTO>> getCarros(String url) {
+    private ResponseEntity<List<CarroDTO_old>> getCarros(String url) {
        // return rest.withBasicAuth("user","123").exchange(
         		return rest.exchange(
                 url,
                 HttpMethod.GET,
                 null,
-                new ParameterizedTypeReference<List<CarroDTO>>() {
+                new ParameterizedTypeReference<List<CarroDTO_old>>() {
                 });
     }
 
@@ -63,7 +63,7 @@ public class CarrosAPITest {
 
         // Buscar o objeto
         String location = response.getHeaders().get("location").get(0);
-        CarroDTO c = getCarro(location).getBody();
+        CarroDTO_old c = getCarro(location).getBody();
 
         assertNotNull(c);
         assertEquals("Porshe", c.getNome());
@@ -79,7 +79,7 @@ public class CarrosAPITest {
 
     @Test
     public void testLista() {
-        List<CarroDTO> carros = getCarros("/api/v1/carros").getBody();
+        List<CarroDTO_old> carros = getCarros("/api/v1/carros").getBody();
         assertNotNull(carros);
         assertEquals(30, carros.size());
     }
@@ -97,10 +97,10 @@ public class CarrosAPITest {
     @Test
     public void testGetOk() {
 
-        ResponseEntity<CarroDTO> response = getCarro("/api/v1/carros/11");
+        ResponseEntity<CarroDTO_old> response = getCarro("/api/v1/carros/11");
         assertEquals(response.getStatusCode(), HttpStatus.OK);
 
-        CarroDTO c = response.getBody();
+        CarroDTO_old c = response.getBody();
         assertEquals("Ferrari FF", c.getNome());
     }
 

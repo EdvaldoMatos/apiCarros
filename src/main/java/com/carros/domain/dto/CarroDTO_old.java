@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class CarroDTO {
+public class CarroDTO_old {
 	private Long id;
 	private String nome;
 	private String tipo;
@@ -23,9 +23,9 @@ public class CarroDTO {
 	 * ModelMapper(); return modelMapper.map(carro, CarroDTO.class); }
 	 */
 
-
-	public static CarroDTO consumeFromVO(Carro parsable) {
-		return CarroDTO.builder()
+	
+	public static  CarroDTO_old consumeFromVO(Carro parsable) {
+		return CarroDTO_old.builder()
 		.id(parsable.getId())
 		.nome(parsable.getNome())
 		.tipo(parsable.getTipo())
@@ -40,4 +40,8 @@ public class CarroDTO {
 		.build();
 
 	}
+
+
+	
+
 }
