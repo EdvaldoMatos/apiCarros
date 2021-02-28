@@ -39,7 +39,7 @@ public class CarrosController {
 	@GetMapping("/tipo/{tipo}")
 	public ResponseEntity<List<CarroDTO>> getCarrosByTipo(@PathVariable("tipo") String tipo) {
 		List<CarroDTO> carros = service.getCarrosByTipo(tipo);
-		return carros.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(carros);
+		return carros.isEmpty() ? ResponseEntity.notFound().build() : ResponseEntity.ok(carros);
 	}
 
 	@PostMapping

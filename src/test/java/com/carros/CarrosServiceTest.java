@@ -1,20 +1,8 @@
 package com.carros;
 
-import static junit.framework.TestCase.*;
-
-import java.util.List;
-
-import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import com.carros.api.exception.ObjectNotFoundException;
-import com.carros.domain.Carro;
-import com.carros.domain.CarroService;
-import com.carros.domain.Fabricante;
-import com.carros.domain.dto.CarroDTO_old;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

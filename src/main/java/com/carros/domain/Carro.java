@@ -46,9 +46,10 @@ public class Carro implements Parsable<CarroDTO> {
 		this.urlVideo = dto.getUrlVideo();
 		this.latitude = dto.getLatitude();
 		this.longitude = dto.getLongitude();
-		if (dto != null ) {
+		if (dto.getFabricante() != null ) {
 			this.setFabricante(new Fabricante(dto.getFabricante()));			
-		}		
+		}
+		
 	}
 
 
