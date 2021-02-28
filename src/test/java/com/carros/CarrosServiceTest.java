@@ -1,5 +1,14 @@
 package com.carros;
 
+
+import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertNotNull;
+import static junit.framework.TestCase.fail;
+
+import java.util.List;
+
+import org.junit.Test;
+
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -63,4 +72,5 @@ public class CarrosServiceTest {
 	 * 
 	 * assertEquals("Ferrari FF", c.getNome()); }
 	 */
+
 }

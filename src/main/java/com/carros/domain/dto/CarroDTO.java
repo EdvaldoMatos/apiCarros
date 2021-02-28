@@ -9,20 +9,21 @@ import lombok.Setter;
 
 @AllArgsConstructor
 @Data
+
 @Getter
 @Setter
 public class CarroDTO implements Parsable<Carro> {
+
 	private Long id;
-    private String nome;
-    private String tipo;
-    private String descricao;
-    private String urlFoto;
-    private String urlVideo;
-    private String latitude;
-    private String longitude;
+	private String nome;
+	private String tipo;
+	private String descricao;
+	private String urlFoto;
+	private String urlVideo;
+	private String latitude;
+	private String longitude;
 	private FabricanteDTO fabricante;
-	
-	
+
 	public CarroDTO(Carro ent) {
 		this.id = ent.getId();
 		this.nome = ent.getNome();
@@ -32,14 +33,14 @@ public class CarroDTO implements Parsable<Carro> {
 		this.urlVideo = ent.getUrlVideo();
 		this.latitude = ent.getLatitude();
 		this.longitude = ent.getLongitude();
-		if (ent.getFabricante() != null ) {
-			this.setFabricante(new FabricanteDTO(ent.getFabricante()));			
+		if (ent.getFabricante() != null) {
+			this.setFabricante(new FabricanteDTO(ent.getFabricante()));
 		}
-		
+
 	}
-	
+
 	@Override
-	public Carro convert() {		
+	public Carro convert() {
 		return new Carro(this);
 	}
 }
